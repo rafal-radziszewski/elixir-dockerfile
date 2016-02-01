@@ -32,7 +32,7 @@ ENV REFRESHED_AT 2016-02-01
 # See bug : https://github.com/phusion/baseimage-docker/issues/119
 #ENV HOME /root
 # Workaround:
-RUN echo /root > /etc/container_environment/HOME
+# RUN echo /root > /etc/container_environment/HOME
 
 # Regenerate SSH host keys. baseimage-docker does not contain any, so you
 # have to do that yourself. You may also comment out this instruction; the
