@@ -17,7 +17,7 @@
 #  docker run --rm -t -i phusion/baseimage:<VERSION> /sbin/my_init -- bash -l
 #
 # Thanks to @hqmq_ for the heads up
-FROM phusion/baseimage:0.9.16
+FROM tianon/debian:jessie
 MAINTAINER Nizar Venturini @trenpixster
 
 # Important!  Update this no-op ENV variable when this Dockerfile
@@ -60,10 +60,10 @@ WORKDIR /tmp
 # See : https://github.com/phusion/baseimage-docker/issues/58
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
-RUN echo "deb http://packages.erlang-solutions.com/ubuntu trusty contrib" >> /etc/apt/sources.list && \
-    apt-key adv --fetch-keys http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc && \
+RUN echo "deb http://packages.erlang-solutions.com/debian jessie contrib" >> /etc/apt/sources.list && \
+    apt-key adv --fetch-keys http://packages.erlang-solutions.com/debian/erlang_solutions.asc && \
     apt-get update && apt-get install -y \
-    esl-erlang=1:18.1 \
+    erlang=1:18.1 \
     git \
     unzip \
     build-essential \
