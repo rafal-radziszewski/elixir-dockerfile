@@ -30,7 +30,7 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
 RUN apt-get install -y \
-    esl-erlang=1:19.0 \
+    erlang=1:19.0-1 \
     git \
     unzip \
     build-essential \
